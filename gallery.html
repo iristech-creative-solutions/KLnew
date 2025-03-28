@@ -111,7 +111,7 @@
                                 <a href="about.html">Pages</a>
                                 <ul class="sub-menu">
                                     <li class="menu-item"><a href="about.html">About Us</a></li>
-                                    <li class="menu-item"><a href="our-team.html">Our Team</a></li>
+                       
                                     <li class="menu-item"><a href="hotel-review.html">Hotel Review</a></li>
                                     <li class="menu-item"><a href="faq.html">FAQ</a></li>
                                     <li class="menu-item"><a href="gallery.html">Gallery</a></li>
@@ -431,8 +431,8 @@
 
                                 <section class="gallery-section">
                                     <br><br><br>
-                                    <h2>A Premier Stay in Makati’s Business District</h2>
-                                    <p>Modern Comfort, Prime Location, and Unmatched Hospitality Await You</p>
+                                    <h3>A Premier Stay in Makati’s Business District</h3>
+                                    <p style="color: #0a0a0a;"><strong>Modern Comfort, Prime Location, and Unmatched Hospitality Await You</strong></p>
                                     <div class="gallery-container">
                                         <div class="gallery-item">
                                             <img src="upload/gar.jpg" alt="Hotel Room">
@@ -645,138 +645,210 @@
                                     </div>
                                 </div>
                                 <style>
-                                    .gallery-container {
-                                        display: flex;
-                                        flex-wrap: wrap;
-                                        gap: 10px;
-                                    }
+                                  .gallery-container {
+                                      display: flex;
+                                      flex-wrap: wrap;
+                                      gap: 10px;
+                                      justify-content: center; /* Center items for better mobile layout */
+                                  }
+                                
+                                  .gdlr-core-item-list {
+                                      width: calc(25% - 10px); /* 4 columns on desktop */
+                                      display: none; /* Hide by default */
+                                      box-sizing: border-box;
+                                      transition: transform 0.3s ease; /* Add smooth hover effect */
+                                  }
+                              
+                                  .gdlr-core-item-list:hover {
+                                      transform: scale(1.02); /* Slight zoom on hover */
+                                  }
+                                
+                                  /* Show only the first 8 images initially */
+                                  .gdlr-core-item-list:nth-child(-n+8) {
+                                      display: block;
+                                  }
+                                
+                                  /* Responsive adjustments */
+                                  @media (max-width: 1024px) {
+                                      .gdlr-core-item-list {
+                                          width: calc(33.333% - 10px); /* 3 columns on tablet */
+                                      }
+                                  }
                                   
-                                    .gdlr-core-item-list {
-                                        width: calc(25% - 10px); /* Adjust based on your design */
-                                        display: none; /* Hide by default */
-                                    }
+                                  @media (max-width: 768px) {
+                                      .gdlr-core-item-list {
+                                          width: calc(50% - 10px); /* 2 columns on small tablets */
+                                      }
+                                  }
                                   
-                                    /* Show only the first 8 images initially */
-                                    .gdlr-core-item-list:nth-child(-n+8) {
-                                        display: block;
-                                    }
-                                  
-                                    /* Hide checkbox input */
-                                    #load-more {
-                                        display: none;
-                                    }
-                                  
-                                    /* When checkbox is checked, show all items */
-                                    #load-more:checked ~ .gallery-container .gdlr-core-item-list {
-                                        display: block;
-                                    }
-                                  
-                                    /* Style for the button */
-                                    .load-more-label {
-                                        display: block;
-                                        text-align: center;
-                                        margin-top: 20px;
-                                        padding: 10px;
-                                        background: #01060c;
-                                        color: white;
-                                        cursor: pointer;
-                                        border-radius: 5px;
-                                        width: 150px;
-                                        margin-left: auto;
-                                        margin-right: auto;
-                                    }
-                                  
-                                    /* Change button text when clicked */
-                                    #load-more:checked + .load-more-label::after {
-                                        content: "Show Less";
-                                    }
-                                  
-                                    .load-more-label::after {
-                                        content: "Load More";
-                                    }
-                                  </style>
-                                  
-
-                                  <input type="checkbox" id="load-more">       
-                                  <div class="gallery-container">
-                                      <div class="gdlr-core-item-list">
-                                          <a class="gdlr-core-lightgallery gdlr-core-js"
-                                             href="upload/green/g4.jpg"
-                                             data-lightbox-group="gdlr-core-img-group-2">
-                                              <img src="upload/green/g4.jpg" width="100%">
-                                          </a>
-                                      </div>
-                                      <div class="gdlr-core-item-list">
-                                          <a class="gdlr-core-lightgallery gdlr-core-js"
-                                             href="upload/green/g5.jpg"
-                                             data-lightbox-group="gdlr-core-img-group-2">
-                                              <img src="upload/green/g5.jpg" width="100%">
-                                          </a>
-                                      </div>
-                                      <div class="gdlr-core-item-list">
-                                          <a class="gdlr-core-lightgallery gdlr-core-js"
-                                             href="upload/green/g6.jpg"
-                                             data-lightbox-group="gdlr-core-img-group-2">
-                                              <img src="upload/green/g6.jpg" width="100%">
-                                          </a>
-                                      </div>
-                                      <div class="gdlr-core-item-list">
-                                          <a class="gdlr-core-lightgallery gdlr-core-js"
-                                             href="upload/green/g7.jpg"
-                                             data-lightbox-group="gdlr-core-img-group-2">
-                                              <img src="upload/green/g7.jpg" width="100%">
-                                          </a>
-                                      </div>
-                                     
-                                      <div class="gdlr-core-item-list">
-                                          <a class="gdlr-core-lightgallery gdlr-core-js"
-                                             href="upload/green/g9.jpg"
-                                             data-lightbox-group="gdlr-core-img-group-2">
-                                              <img src="upload/green/g9.jpg" width="100%">
-                                          </a>
-                                      </div>
-                                      <div class="gdlr-core-item-list">
-                                          <a class="gdlr-core-lightgallery gdlr-core-js"
-                                             href="upload/green/g10.jpg"
-                                             data-lightbox-group="gdlr-core-img-group-2">
-                                              <img src="upload/green/g10.jpg" width="100%">
-                                          </a>
-                                      </div>
-                                      <div class="gdlr-core-item-list">
-                                          <a class="gdlr-core-lightgallery gdlr-core-js"
-                                             href="upload/green/g12.jpg"
-                                             data-lightbox-group="gdlr-core-img-group-2">
-                                              <img src="upload/green/g12.jpg" width="100%">
-                                          </a>
-                                      </div>
-                                      <div class="gdlr-core-item-list">
-                                        <a class="gdlr-core-lightgallery gdlr-core-js"
-                                           href="upload/gb4.jpg"
-                                           data-lightbox-group="gdlr-core-img-group-2">
-                                            <img src="upload/gb4.jpg" width="100%">
-                                        </a>
-                                    </div>
-                                    <div class="gdlr-core-item-list">
-                                        <a class="gdlr-core-lightgallery gdlr-core-js"
-                                           href="upload/gb2.jpg"
-                                           data-lightbox-group="gdlr-core-img-group-2">
-                                            <img src="upload/gb2.jpg" width="100%">
-                                        </a>
-                                    </div>
-                                    <div class="gdlr-core-item-list">
-                                        <a class="gdlr-core-lightgallery gdlr-core-js"
-                                           href="upload/gb3.jpg"
-                                           data-lightbox-group="gdlr-core-img-group-2">
-                                            <img src="upload/gb3.jpg" width="100%">
-                                        </a>
-                                    </div>
-                                    
+                                  @media (max-width: 480px) {
+                                      .gdlr-core-item-list {
+                                          width: 100%; /* 1 column on mobile */
+                                      }
+                                      
+                                      .gallery-container {
+                                          gap: 8px; /* Smaller gap on mobile */
+                                      }
+                                  }
+                                
+                                  /* Hide checkbox input */
+                                  #load-more {
+                                      display: none;
+                                  }
+                                
+                                  /* When checkbox is checked, show all items */
+                                  #load-more:checked ~ .gallery-container .gdlr-core-item-list {
+                                      display: block;
+                                  }
+                                
+                                  /* Style for the button */
+                                  .load-more-label {
+                                      display: block;
+                                      text-align: center;
+                                      margin: 20px auto;
+                                      padding: 12px 24px;
+                                      background: #01060c;
+                                      color: white;
+                                      cursor: pointer;
+                                      border-radius: 5px;
+                                      width: auto;
+                                      max-width: 200px;
+                                      font-family: Arial, sans-serif;
+                                      font-weight: bold;
+                                      transition: all 0.3s ease;
+                                      box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+                                  }
+                              
+                                  .load-more-label:hover {
+                                      background: #020d1a;
+                                      transform: translateY(-2px);
+                                      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+                                  }
+                              
+                                  .load-more-label:active {
+                                      transform: translateY(0);
+                                  }
+                                
+                                  /* Change button text when clicked */
+                                  #load-more:checked + .load-more-label::after {
+                                      content: "Show Less";
+                                  }
+                                
+                                  .load-more-label::after {
+                                      content: "Load More";
+                                  }
+                              
+                                  /* Image styling */
+                                  .gdlr-core-item-list img {
+                                      width: 100%;
+                                      height: auto;
+                                      border-radius: 4px;
+                                      display: block;
+                                  }
+                              
+                                  /* Lightbox link styling */
+                                  .gdlr-core-lightgallery {
+                                      display: block;
+                                      position: relative;
+                                      overflow: hidden;
+                                      border-radius: 4px;
+                                  }
+                              
+                                  /* Add overlay effect on hover */
+                                  .gdlr-core-lightgallery::after {
+                                      content: "";
+                                      position: absolute;
+                                      top: 0;
+                                      left: 0;
+                                      right: 0;
+                                      bottom: 0;
+                                      background: rgba(0,0,0,0.3);
+                                      opacity: 0;
+                                      transition: opacity 0.3s ease;
+                                  }
+                              
+                                  .gdlr-core-lightgallery:hover::after {
+                                      opacity: 1;
+                                  }
+                              </style>
+                              
+                              <input type="checkbox" id="load-more">       
+                              <div class="gallery-container">
+                                  <div class="gdlr-core-item-list">
+                                      <a class="gdlr-core-lightgallery gdlr-core-js"
+                                         href="upload/green/g4.jpg"
+                                         data-lightbox-group="gdlr-core-img-group-2">
+                                          <img src="upload/green/g4.jpg" alt="Gallery image 1">
+                                      </a>
                                   </div>
-                                  
+                                  <div class="gdlr-core-item-list">
+                                      <a class="gdlr-core-lightgallery gdlr-core-js"
+                                         href="upload/green/g5.jpg"
+                                         data-lightbox-group="gdlr-core-img-group-2">
+                                          <img src="upload/green/g5.jpg" alt="Gallery image 2">
+                                      </a>
+                                  </div>
+                                  <div class="gdlr-core-item-list">
+                                      <a class="gdlr-core-lightgallery gdlr-core-js"
+                                         href="upload/green/g6.jpg"
+                                         data-lightbox-group="gdlr-core-img-group-2">
+                                          <img src="upload/green/g6.jpg" alt="Gallery image 3">
+                                      </a>
+                                  </div>
+                                  <div class="gdlr-core-item-list">
+                                      <a class="gdlr-core-lightgallery gdlr-core-js"
+                                         href="upload/green/g7.jpg"
+                                         data-lightbox-group="gdlr-core-img-group-2">
+                                          <img src="upload/green/g7.jpg" alt="Gallery image 4">
+                                      </a>
+                                  </div>
                                  
-                                  <label for="load-more" class="load-more-label"></label>
-                                  
+                                  <div class="gdlr-core-item-list">
+                                      <a class="gdlr-core-lightgallery gdlr-core-js"
+                                         href="upload/green/g9.jpg"
+                                         data-lightbox-group="gdlr-core-img-group-2">
+                                          <img src="upload/green/g9.jpg" alt="Gallery image 5">
+                                      </a>
+                                  </div>
+                                  <div class="gdlr-core-item-list">
+                                      <a class="gdlr-core-lightgallery gdlr-core-js"
+                                         href="upload/green/g10.jpg"
+                                         data-lightbox-group="gdlr-core-img-group-2">
+                                          <img src="upload/green/g10.jpg" alt="Gallery image 6">
+                                      </a>
+                                  </div>
+                                  <div class="gdlr-core-item-list">
+                                      <a class="gdlr-core-lightgallery gdlr-core-js"
+                                         href="upload/green/g12.jpg"
+                                         data-lightbox-group="gdlr-core-img-group-2">
+                                          <img src="upload/green/g12.jpg" alt="Gallery image 7">
+                                      </a>
+                                  </div>
+                                  <div class="gdlr-core-item-list">
+                                    <a class="gdlr-core-lightgallery gdlr-core-js"
+                                       href="upload/gb4.jpg"
+                                       data-lightbox-group="gdlr-core-img-group-2">
+                                        <img src="upload/gb4.jpg" alt="Gallery image 8">
+                                    </a>
+                                  </div>
+                                  <div class="gdlr-core-item-list">
+                                    <a class="gdlr-core-lightgallery gdlr-core-js"
+                                       href="upload/gb2.jpg"
+                                       data-lightbox-group="gdlr-core-img-group-2">
+                                        <img src="upload/gb2.jpg" alt="Gallery image 9">
+                                    </a>
+                                  </div>
+                                  <div class="gdlr-core-item-list">
+                                    <a class="gdlr-core-lightgallery gdlr-core-js"
+                                       href="upload/gb3.jpg"
+                                       data-lightbox-group="gdlr-core-img-group-2">
+                                        <img src="upload/gb3.jpg" alt="Gallery image 10">
+                                    </a>
+                                  </div>
+                              </div>
                             </div>
+                              <label for="load-more" class="load-more-label"></label>
+                       
                         </div>
                     </div>
 
@@ -941,8 +1013,7 @@
                           </div>
                         </div>
                       </footer>
-        </div>
-    </div>
+    
 
 
     <script type="text/javascript" src="js/jquery.min.js?ver=3.6.0" id="jquery-core-js"></script>
