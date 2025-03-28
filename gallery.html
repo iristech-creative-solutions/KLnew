@@ -439,19 +439,19 @@
                                             <div class="gallery-content">
                                                 <h3>Your Stay</h3>
                                                 <p>Stylish, cozy rooms with city views, a balcony, and modern amenities.</p>
-                                                <a href="#" class="more-info">See Photos</a>
+                                                <a
+                                                class="gdlr-core-lightgallery gdlr-core-js more-info"
+                                                href="upload/gar.jpg"
+                                                data-lightbox-group="gdlr-core-img-group-12"
+                                            >
+                                            See Photos
+                                            </a>
                                                 
                                                 <a
                                                 class="gdlr-core-lightgallery gdlr-core-js"
                                                 href="upload/newes.jpg"
                                                 data-lightbox-group="gdlr-core-img-group-12">
 
-                                                <a
-                                                class="gdlr-core-lightgallery gdlr-core-js"
-                                                href="upload/gar.jpg"
-                                                data-lightbox-group="gdlr-core-img-group-12">
-                                                
-                                                
                                                 <a
                                                 class="gdlr-core-lightgallery gdlr-core-js"
                                                 href="upload/eqb.png"
@@ -485,7 +485,14 @@
                                             <div class="gallery-content">
                                                 <h3>Dining & Kitchenette</h3>
                                                 <p>Enjoy in-room kitchen facilities or dine at our on-site restaurant.</p>
-                                                <a href="#" class="more-info">See Photos</a>
+                                                <a
+                                                class="gdlr-core-lightgallery gdlr-core-js more-info"
+                                                href="upload/kitchen2.jpg"
+                                                data-lightbox-group="gdlr-core-img-group-13"
+                                            >
+                                            See Photos
+                                            </a>
+                                                
                                                 <a
                                                 class="gdlr-core-lightgallery gdlr-core-js"
                                                 href="upload/kitchen.jpg"
@@ -540,7 +547,14 @@
                                             <div class="gallery-content">
                                                 <h3>Wellness & Leisure</h3>
                                                 <p>Swim, relax in the sauna, or stay active in our gym.</p>
-                                                <a href="#" class="more-info">See Photos</a>
+                                                <a
+                                                class="gdlr-core-lightgallery gdlr-core-js more-info"
+                                                href="upload/pool.jpg"
+                                                data-lightbox-group="gdlr-core-img-group-14"
+                                            >
+                                            See Photos
+                                            </a>
+                                                
                                                 <a
                                                 class="gdlr-core-lightgallery gdlr-core-js"
                                                 href="upload/pool.jpg"
@@ -582,7 +596,14 @@
                                             <div class="gallery-content">
                                                 <h3>Prime Location</h3>
                                                 <p>Minutes from Greenbelt Mall, parks, and business hubs.</p>
-                                                <a href="#" class="more-info">See Photos</a>
+                                                <a
+                                                class="gdlr-core-lightgallery gdlr-core-js more-info"
+                                                href="upload/jogging.jpg"
+                                                data-lightbox-group="gdlr-core-img-group-15"
+                                            >
+                                            See Photos
+                                            </a>
+                                                
                                                 <a
                                                 class="gdlr-core-lightgallery gdlr-core-js"
                                                 href="upload/park8.jpg"
@@ -645,131 +666,126 @@
                                     </div>
                                 </div>
                                 <style>
-                                  .gallery-container {
-                                      display: flex;
-                                      flex-wrap: wrap;
-                                      gap: 10px;
-                                      justify-content: center; /* Center items for better mobile layout */
-                                  }
-                                
-                                  .gdlr-core-item-list {
-                                      width: calc(25% - 10px); /* 4 columns on desktop */
-                                      display: none; /* Hide by default */
-                                      box-sizing: border-box;
-                                      transition: transform 0.3s ease; /* Add smooth hover effect */
-                                  }
-                              
-                                  .gdlr-core-item-list:hover {
-                                      transform: scale(1.02); /* Slight zoom on hover */
-                                  }
-                                
-                                  /* Show only the first 8 images initially */
-                                  .gdlr-core-item-list:nth-child(-n+8) {
-                                      display: block;
-                                  }
-                                
-                                  /* Responsive adjustments */
-                                  @media (max-width: 1024px) {
-                                      .gdlr-core-item-list {
-                                          width: calc(33.333% - 10px); /* 3 columns on tablet */
-                                      }
-                                  }
-                                  
-                                  @media (max-width: 768px) {
-                                      .gdlr-core-item-list {
-                                          width: calc(50% - 10px); /* 2 columns on small tablets */
-                                      }
-                                  }
-                                  
-                                  @media (max-width: 480px) {
-                                      .gdlr-core-item-list {
-                                          width: 100%; /* 1 column on mobile */
-                                      }
-                                      
-                                      .gallery-container {
-                                          gap: 8px; /* Smaller gap on mobile */
-                                      }
-                                  }
-                                
-                                  /* Hide checkbox input */
-                                  #load-more {
-                                      display: none;
-                                  }
-                                
-                                  /* When checkbox is checked, show all items */
-                                  #load-more:checked ~ .gallery-container .gdlr-core-item-list {
-                                      display: block;
-                                  }
-                                
-                                  /* Style for the button */
-                                  .load-more-label {
-                                      display: block;
-                                      text-align: center;
-                                      margin: 20px auto;
-                                      padding: 12px 24px;
-                                      background: #01060c;
-                                      color: white;
-                                      cursor: pointer;
-                                      border-radius: 5px;
-                                      width: auto;
-                                      max-width: 200px;
-                                      font-family: Arial, sans-serif;
-                                      font-weight: bold;
-                                      transition: all 0.3s ease;
-                                      box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-                                  }
-                              
-                                  .load-more-label:hover {
-                                      background: #020d1a;
-                                      transform: translateY(-2px);
-                                      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-                                  }
-                              
-                                  .load-more-label:active {
-                                      transform: translateY(0);
-                                  }
-                                
-                                  /* Change button text when clicked */
-                                  #load-more:checked + .load-more-label::after {
-                                      content: "Show Less";
-                                  }
-                                
-                                  .load-more-label::after {
-                                      content: "Load More";
-                                  }
-                              
-                                  /* Image styling */
-                                  .gdlr-core-item-list img {
-                                      width: 100%;
-                                      height: auto;
-                                      border-radius: 4px;
-                                      display: block;
-                                  }
-                              
-                                  /* Lightbox link styling */
-                                  .gdlr-core-lightgallery {
-                                      display: block;
-                                      position: relative;
-                                      overflow: hidden;
-                                      border-radius: 4px;
-                                  }
-                              
-                                  /* Add overlay effect on hover */
-                                  .gdlr-core-lightgallery::after {
-                                      content: "";
-                                      position: absolute;
-                                      top: 0;
-                                      left: 0;
-                                      right: 0;
-                                      bottom: 0;
-                                      background: rgba(0,0,0,0.3);
-                                      opacity: 0;
-                                      transition: opacity 0.3s ease;
-                                  }
-                              
-                                  .gdlr-core-lightgallery:hover::after {
-                                      opacity: 1;
-                                  }
+                               .gallery-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center; /* Center images */
+    padding: 0 10px; /* Maintain padding */
+}
+/* Default: 4 images per row */
+.gdlr-core-item-list {
+    width: calc(25% - 10px); /* 4 columns layout on desktop */
+    display: none; /* Hide initially */
+    box-sizing: border-box;
+    transition: transform 0.3s ease;
+}
+
+.gdlr-core-item-list:hover {
+    transform: scale(1.02); /* Slight zoom on hover */
+}
+
+/* Show only the first 8 images initially */
+.gdlr-core-item-list:nth-child(-n+8) {
+    display: block;
+}
+
+/* Responsive adjustments */
+
+/* 2 images per row on tablets */
+@media (max-width: 768px) {
+    .gdlr-core-item-list {
+        width: calc(50% - 10px);
+    }
+}
+
+/* 1 image per row on mobile */
+@media (max-width: 480px) {
+    .gdlr-core-item-list {
+        width: calc(100% - 20px); /* Full width but with padding */
+        margin: 0 auto; /* Center it properly */
+    }
+}
+
+/* Load More functionality */
+#load-more {
+    display: none;
+}
+
+#load-more:checked ~ .gallery-container .gdlr-core-item-list {
+    display: block;
+}
+
+/* Load More button */
+.load-more-label {
+    display: block;
+    text-align: center;
+    margin: 20px auto;
+    padding: 12px 24px;
+    background: #01060c;
+    color: white;
+    cursor: pointer;
+    border-radius: 5px;
+    width: auto;
+    max-width: 200px;
+    font-family: Arial, sans-serif;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+.load-more-label:hover {
+    background: #020d1a;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+.load-more-label:active {
+    transform: translateY(0);
+}
+
+/* Change button text when clicked */
+#load-more:checked + .load-more-label::after {
+    content: "Show Less";
+}
+
+.load-more-label::after {
+    content: "Load More";
+}
+
+/* Image styling */
+.gdlr-core-item-list img {
+    width: 100%;
+    height: auto;
+    border-radius: 4px;
+    display: block;
+}
+
+/* Lightbox styling */
+.gdlr-core-lightgallery {
+    display: block;
+    position: relative;
+    overflow: hidden;
+    border-radius: 4px;
+}
+
+/* Hover overlay */
+.gdlr-core-lightgallery::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0,0,0,0.3);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.gdlr-core-lightgallery:hover::after {
+    opacity: 1;
+}
+
                               </style>
                               
                               <input type="checkbox" id="load-more">       

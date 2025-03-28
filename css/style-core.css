@@ -5731,6 +5731,7 @@
  ul.sf-menu>.menu-item-language img.iclflag {
 	 vertical-align: baseline;
 	 margin-right: 10px;
+	 font-size: large;
  }
  
  ul.sf-menu>.menu-item-language ul.submenu-languages {
@@ -5739,15 +5740,18 @@
 	 z-index: 99;
 	 list-style: none;
 	 margin: 0px 0px 0px -15px;
+	 font-size: large;
  }
  
  ul.sf-menu>.menu-item-language li {
 	 padding: 1px 11px;
+	 font-size: large;
  }
  
  ul.sf-menu>.menu-item-language li a {
 	 padding: 6px 12px;
 	 display: block;
+	 font-size: large;
  }
  
  ul.sf-menu>.menu-item-language li:first-child {
@@ -7566,11 +7570,15 @@
  .sf-menu {
 	 list-style: none;
 	 margin-left: 0px;
+	 font-weight: 300;
+	 font-size: large;
  }
  
  .sf-menu>li {
 	 float: left;
 	 cursor: pointer;
+	 font-weight: 600;
+	 font-size: large;
  }
  
  .sf-menu>li>a {
@@ -7578,6 +7586,8 @@
 	 text-decoration: none;
 	 position: relative;
 	 z-index: 9;
+	 font-weight: 300;
+	 font-size: large;
  }
  
  /* normal menu */
@@ -7587,54 +7597,67 @@
 	 display: none;
 	 z-index: 99;
 	 min-width: 220px;
+	 font-weight: 300;
+	 font-size: large;
  }
  
  .sf-menu>.hotale-normal-menu ul {
 	 margin-left: -15px;
+	 font-size: large;
  }
  
  .sf-menu>.hotale-normal-menu ul ul {
 	 margin-left: 0px;
+	 font-size: large;
  }
  
  .sf-menu>.hotale-normal-menu.sfHover>ul,
  .sf-menu>.hotale-normal-menu.sfHover>ul:hover,
  .sf-menu>.hotale-normal-menu li.sfHover>ul {
 	 display: block;
+	 font-size: large;
  }
  
  .sf-menu>.hotale-normal-menu ul ul {
 	 top: 0px;
 	 left: 100%;
+	 font-size: large;
  }
  
  .sf-menu>.hotale-normal-menu ul.hotale-menu-right {
 	 right: 0px;
+	 font-size: large;
  }
  
  .sf-menu>.hotale-normal-menu ul ul.sub-menu-right {
 	 left: auto;
 	 right: 100%;
+	 font-size: large;
  }
  
  .sf-menu>.hotale-normal-menu ul ul.sub-menu-left {
 	 right: auto;
 	 left: 100%;
+	 font-size: large;
  }
  
  .sf-menu>.hotale-normal-menu li {
 	 position: relative;
 	 white-space: nowrap;
+	 font-size: large;
  }
  
  .sf-menu>.hotale-normal-menu li a {
 	 text-decoration: none;
+	 font-size: large;
  }
  
  .sf-menu>.hotale-normal-menu li>a.sf-with-ul-pre {}
  
  .sf-menu>.hotale-normal-menu li>a.sf-with-ul-pre:after {
 	 content: '>';
+	 font-weight: 300;
+	 font-size: large;
  }
  
  /* mega menu */
@@ -7642,21 +7665,28 @@
 	 position: absolute;
 	 display: none;
 	 z-index: 99;
+	 font-weight: 300;
+	 font-size: large;
  }
  
  .sf-menu>.hotale-mega-menu.sfHover .sf-mega,
  .sf-menu>.hotale-mega-menu.sfHover .sf-mega:hover {
 	 display: block;
+	 font-size: large;
  }
  
  .sf-menu>.hotale-mega-menu .sf-mega-section-inner a {
 	 text-decoration: none;
+	 font-weight: 300;
+	 font-size: large;
  }
  
  .sf-menu>.hotale-mega-menu .sf-mega-section-inner ul {
 	 list-style: none;
 	 margin-left: 0px;
 	 margin-bottom: 0px;
+	 font-weight: 300;
+	 font-size: large;
  }
  
  /* vertical menu */
@@ -7666,10 +7696,13 @@
 	 left: 100%;
 	 top: 0;
 	 margin-bottom: 0px;
+	 font-weight: 300;
+	 font-size: large;
  }
  
  .sf-vertical li {
 	 position: relative;
+	 font-size: large;
  }
  
  .sf-vertical ul.sub-menu {
@@ -7680,6 +7713,7 @@
 	 top: 0px;
 	 z-index: 9;
 	 min-width: 190px;
+	 font-weight: 300;
  }
  
  .sf-vertical ul.sub-menu li {
