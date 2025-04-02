@@ -181,23 +181,21 @@
                 <div class="hotale-header-container hotale-container">
                   <div class="hotale-header-container-inner clearfix">
                     <div class="hotale-logo hotale-item-pdlr">
-                      <div class="hotale-logo-inner">
-                        <a class="hotale-fixed-nav-logo" href="index.html">
-                          <img
-                            src="upload/logo-nx1.png"
-                            alt=""
-                            title="logo-nx1"
-                          />
+                        <div class="hotale-logo-inner">
+                          <a class="hotale-fixed-nav-logo" href="index.html">
+                            <img src="upload/white.png" alt="" title="logo-nx1" style="width: 60px; height: auto;" />
                         </a>
-                        <a class="hotale-orig-logo" href="index.html">
-                          <img
-                            src="upload/white.png"
-                            alt=""
-                            title="logo-nx1"
-                          />
-                        </a>
+                          </div>
+                          <div class="hotale-logo-inner">
+                          <a class="hotale-orig-logo" href="index.html">
+                            <img
+                              src="upload/white.png"
+                              alt=""
+                              title="logo-nx1"
+                            />
+                          </a>
+                        </div>
                       </div>
-                    </div>
                     <div class="hotale-navigation hotale-item-pdlr clearfix">
                       <div class="hotale-main-menu" id="hotale-main-menu">
                           <ul id="menu-main-navigation-1" class="sf-menu">
@@ -954,39 +952,85 @@
                             <div class="gdlr-core-pbf-sidebar-right gdlr-core-column-extend-right hotale-sidebar-area gdlr-core-column-15 gdlr-core-pbf-sidebar-padding gdlr-core-line-height">
                                 <div class="gdlr-core-sidebar-item gdlr-core-item-pdlr">
                                     <div class="tourmaster-room-booking-bar-wrap">
-                                        <br><br><br>
+<br>
                                         <div class="tourmaster-room-booking-bar-title"><span class="tourmaster-active" data-room-tab="booking">Book Your Room</span></div>
                                         <div class="tourmaster-room-booking-bar-content">
-                                            <div class="tourmaster-room-booking-wrap" class="tourmaster-active" data-room-tab="booking">
-                                                <section id="hbe-bws-wrapper-widget-code"></section><script type="text/javascript" src="https://book.securebookings.net/js/widget.search.js"></script><script type="text/javascript" src="https://book.securebookings.net/searchWidgetCustomize?lang=en&id=eb8b7b09-87fd-1543977724-4b85-97b5-764ccd97b70d&ajax=true"></script>
-                                                    <!-- <div class="tourmaster-room-booking-guest-selection tourmaster-one">
-                                                        <div class="tourmaster-room-amount-selection">
-                                                            <div class="tourmaster-custom-amount-display gdlr-core-skin-e-background">
-                                                                <div class="tourmaster-head gdlr-core-skin-e-content">
-                                                                    <span>Room<span class="tourmaster-number">1</span> : </span>Guests
+                                         
+                                                <!-- <section id="hbe-bws-wrapper-widget-code"></section><script type="text/javascript" src="https://book.securebookings.net/js/widget.search.js"></script><script type="text/javascript" src="https://book.securebookings.net/searchWidgetCustomize?lang=en&id=eb8b7b09-87fd-1543977724-4b85-97b5-764ccd97b70d&ajax=true"></script> -->
+                                                <div class="tourmaster-room-booking-wrap tourmaster-active" data-room-tab="booking">
+                                                    <form
+                                                        class="tourmaster-room-booking-form clearfix"
+                                                        id="tourmaster-room-booking-form"
+                                                        action="https://book.securebookings.net/roomrate?id=eb8b7b09-87fd-1543977724-4b85-97b5-764ccd97b70d"
+                                                        method="post"
+                                                        target="_blank"
+                                                    >
+                                                        <!-- Date Selection -->
+                                                        <div class="tourmaster-room-date-selection tourmaster-vertical">
+                                                            <div class="tourmaster-custom-start-date gdlr-core-skin-e-background">
+                                                                <div class="tourmaster-head gdlr-core-skin-e-content">Check In</div>
+                                                                <div class="tourmaster-tail gdlr-core-skin-e-content">
+                                                                    <span class="display-start-date"><?php echo date('M d, Y'); ?></span>
                                                                 </div>
-                                                                <div class="tourmaster-tail gdlr-core-skin-e-content"><span class="tourmaster-space"></span>Adults 2<span class="tourmaster-space"></span>Children 0</div>
+                                                                <input type="hidden" name="start_date" id="start_date" value="<?php echo date('Y-m-d'); ?>">
                                                             </div>
-                                                            <div class="tourmaster-custom-amount-selection-wrap">
-                                                                <div class="tourmaster-custom-amount-selection-item clearfix" data-label="Adults">
-                                                                    <div class="tourmaster-head">Adults</div>
-                                                                    <div class="tourmaster-tail">
-                                                                        <span class="tourmaster-minus"><i class="icon_minus-06"></i></span><span class="tourmaster-amount">2</span>
-                                                                        <span class="tourmaster-plus"><i class="icon_plus"></i></span>
-                                                                    </div>
-                                                                    <input type="hidden" name="adult[]" value="2" />
+                                                            <div class="tourmaster-custom-end-date gdlr-core-skin-e-background">
+                                                                <div class="tourmaster-head gdlr-core-skin-e-content">Check Out</div>
+                                                                <div class="tourmaster-tail gdlr-core-skin-e-content">
+                                                                    <span class="display-end-date"><?php echo date('M d, Y', strtotime('+1 day')); ?></span>
                                                                 </div>
-                                                                <div class="tourmaster-custom-amount-selection-item clearfix" data-label="Children">
-                                                                    <div class="tourmaster-head">Children</div>
-                                                                    <div class="tourmaster-tail">
-                                                                        <span class="tourmaster-minus"><i class="icon_minus-06"></i></span><span class="tourmaster-amount">0</span>
-                                                                        <span class="tourmaster-plus"><i class="icon_plus"></i></span>
+                                                                <input type="hidden" name="end_date" id="end_date" value="<?php echo date('Y-m-d', strtotime('+1 day')); ?>">
+                                                            </div>
+                                                            <div class="tourmaster-custom-datepicker-wrap" data-date-format="d M yy">
+                                                                <i class="tourmaster-custom-datepicker-close icon_close"></i>
+                                                                <div class="tourmaster-custom-datepicker-title"></div>
+                                                                <div class="tourmaster-custom-datepicker-calendar"></div>
+                                                            </div>
+                                                        </div>
+                                                
+                                                        <!-- Guest Selection -->
+                                                        <div class="tourmaster-room-booking-guest-selection tourmaster-one">
+                                                            <div class="tourmaster-room-amount-selection">
+                                                                <div class="tourmaster-custom-amount-display gdlr-core-skin-e-background">
+                                                                    <div class="tourmaster-head gdlr-core-skin-e-content">
+                                                                        <span>Room<span class="tourmaster-number">1</span> : </span>Guests
                                                                     </div>
-                                                                    <input type="hidden" name="children[]" value="0" />
+                                                                    <div class="tourmaster-tail gdlr-core-skin-e-content">
+                                                                        <span class="tourmaster-space"></span>Adults <span class="adult-count">2</span>
+                                                                        <span class="tourmaster-space"></span>Children <span class="child-count">0</span>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="tourmaster-custom-amount-selection-wrap">
+                                                                    <div class="tourmaster-custom-amount-selection-item clearfix" data-label="Adults">
+                                                                        <div class="tourmaster-head">Adults</div>
+                                                                        <div class="tourmaster-tail">
+                                                                            <span class="tourmaster-minus"><i class="icon_minus-06"></i></span>
+                                                                            <span class="tourmaster-amount">2</span>
+                                                                            <span class="tourmaster-plus"><i class="icon_plus"></i></span>
+                                                                        </div>
+                                                                        <input type="hidden" name="adults" class="adult-input" value="2">
+                                                                    </div>
+                                                                    <div class="tourmaster-custom-amount-selection-item clearfix" data-label="Children">
+                                                                        <div class="tourmaster-head">Children</div>
+                                                                        <div class="tourmaster-tail">
+                                                                            <span class="tourmaster-minus"><i class="icon_minus-06"></i></span>
+                                                                            <span class="tourmaster-amount">0</span>
+                                                                            <span class="tourmaster-plus"><i class="icon_plus"></i></span>
+                                                                        </div>
+                                                                        <input type="hidden" name="children" class="child-input" value="0">
+                                                                    </div>
+                                                                </div>
+                                                                <div class="guest-validation-message" style="color: red; display: none;">
+                                                                    Maximum 3 guests allowed. For 4+ guests, please book a Studio or Family Loft.
                                                                 </div>
                                                             </div>
                                                         </div>
-                                                    </div> -->
+                                                        
+                                                        <input type="submit" class="tourmaster-room-button tourmaster-full" value="Book Now">
+                                                    </form>
+                                                </div>
+                                                
+                                                <br>
                                             </div>
                                            
                                         </div>
@@ -1199,6 +1243,10 @@
                                                                             <div class="tourmaster-info-wrap clearfix">
                                                                                 <div class="tourmaster-info tourmaster-info-bed-type"><i class="gdlr-icon-double-bed2"></i><span class="tourmaster-tail">2 Queen Beds</span></div>
                                                                                 <div class="tourmaster-info tourmaster-info-guest-amount"><i class="gdlr-icon-group"></i><span class="tourmaster-tail">4 Guests</span></div>
+                                                                                <div class="room-meta">
+                                                                                    <span><i class="fas fa-user-friends"></i> 4 Guests</span>
+                                                                                    <span><i class="gdlr-icon-resize"></i>  35 - 40 sqm.</span>
+                                                                                </div>
                                                                             </div>
                                                                             <a class="tourmaster-read-more tourmaster-type-text" href="studio.html">
                                                                                 Book Now<i class="icon-arrow-right"></i>
@@ -1443,6 +1491,64 @@
             src="js/jquery.min.js?ver=3.6.0"
             id="jquery-core-js"
           ></script>
+          <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                // Initialize dates
+                const today = new Date();
+                const tomorrow = new Date();
+                tomorrow.setDate(today.getDate() + 1);
+                
+                document.querySelector('input[name="start_date"]').value = today.toISOString().split('T')[0];
+                document.querySelector('input[name="end_date"]').value = tomorrow.toISOString().split('T')[0];
+            
+                // Form elements
+                const form = document.getElementById('tourmaster-room-booking-form');
+                const adultInput = document.querySelector('.adult-input');
+                const childInput = document.querySelector('.child-input');
+                const validationMessage = document.querySelector('.guest-validation-message');
+                const startDateInput = document.getElementById('start_date');
+                const endDateInput = document.getElementById('end_date');
+            
+                // Guest validation
+                function validateGuests() {
+                    const adults = parseInt(adultInput.value);
+                    const children = parseInt(childInput.value);
+                    const isValid = (adults + children) <= 3;
+                    
+                    validationMessage.style.display = isValid ? 'none' : 'block';
+                    return isValid;
+                }
+            
+                // Date validation
+                function validateDates() {
+                    const startDate = new Date(startDateInput.value);
+                    const endDate = new Date(endDateInput.value);
+                    
+                    if (!startDateInput.value || !endDateInput.value) {
+                        alert("Please select both check-in and check-out dates");
+                        return false;
+                    }
+                    
+                    if (endDate <= startDate) {
+                        alert("Check-out date must be after check-in date");
+                        return false;
+                    }
+                    
+                    return true;
+                }
+            
+                // Form submission handler
+                form.addEventListener('submit', function(e) {
+                    if (!validateDates() || !validateGuests()) {
+                        e.preventDefault();
+                    }
+                });
+            
+                // Plus/Minus button handlers would go here
+                // ...
+            });
+            </script>
+    
           <script
             type="text/javascript"
             src="js/jquery-migrate.min.js?ver=3.3.2"
