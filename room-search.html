@@ -467,160 +467,421 @@
             <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
         </head>
         <body>
+          <style>
+            /* Modal Styles */
+            .modal {
+                display: none;
+                position: fixed;
+                z-index: 1000;
+                left: 0;
+                top: 0;
+                width: 100%;
+                height: 100%;
+                overflow: auto;
+                background-color: rgba(0,0,0,0.4);
+            }
+            
+            .modal-content {
+                background-color: #fefefe;
+                margin: 5% auto;
+                padding: 20px;
+                border: 1px solid #888;
+                width: 80%;
+                max-width: 800px;
+                border-radius: 5px;
+                box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+            }
+            
+            .close {
+                color: #aaa;
+                float: right;
+                font-size: 28px;
+                font-weight: bold;
+                cursor: pointer;
+            }
+            
+            .close:hover {
+                color: black;
+            }
+            
+            .amenities-columns {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: space-between;
+            }
+            
+            .amenities-columns ul {
+                flex: 1;
+                min-width: 200px;
+                padding: 0 15px;
+            }
+            
+            /* See More Button Styles */
+            .see-more-btn {
+                background: none;
+                border: none;
+                color: #0066cc;
+                text-decoration: underline;
+                cursor: pointer;
+                padding: 5px 0;
+                font-size: 14px;
+                margin-top: 10px;
+            }
+            
+            .see-more-btn:hover {
+                color: #004499;
+            }
+        </style>
             <div class="container">
-                <!-- Executive Queen Room -->
-                <div class="room-card">
-                  <div class="room-header">
-                      <h2>Executive Queen Room</h2>
-                      <div class="bed-configuration">1 Queen Size Bed</div>
-                      <div class="room-meta">
+              <div class="room-card">
+                <div class="room-header">
+                    <h2>Executive Queen Room</h2>
+                    <div class="bed-configuration">1 Queen Size Bed</div>
+                    <div class="room-meta">
                         <span><i class="fas fa-user-friends"></i> 2 Guests</span>
-                        <span><i class="gdlr-icon-resize"></i>  35 - 40 sqm.</span>
-                        
+                        <span><i class="gdlr-icon-resize"></i> 35 - 40 sqm.</span>
                     </div>
-                  </div>
-                  <div class="room-content">
-                      <div class="room-image" style="background-image: url('upload/eqb.png')"></div>
-                      <div class="room-details">
-                          <div class="amenities">
-                              <ul>
+                </div>
+                <div class="room-content">
+                    <div class="room-image" style="background-image: url('upload/eqb.png')"></div>
+                    <div class="room-details">
+                        <div class="amenities">
+                            <ul>
                                 <li>House Keeping</li>
                                 <li>24 Hr Concierge</li>
                                 <li>Balcony (Garden & City View)</li>
                                 <li>Spacious Family Accommodation</li>
                                 <li>Private Bathroom</li>
-                                <li> WiFi</li>
+                                <li>WiFi</li>
                                 <li>TV</li>
-                              </ul>
-                          </div>
-                          <p class="disclaimer">
-                            <ul><li>
-                              Additional Bed (Additional bed for 1 person can be arranged for a fee)
-                            </li>
-                         
-                          </ul>
-                          </p>
-                          <a href="queen.html">
-                            <button class="book-now-btn">BOOK NOW</button>
-                          </a>
-                      </div>
-                  </div>
-              </div>
-              
-               <!-- Executive Studio -->
-               <div class="room-card">
-                <div class="room-header">
-                    <h2>Executive Studio</h2>
-                    <div class="bed-configuration">2 Queen Size Beds</div>
-                    <div class="room-meta">
-                        <span><i class="fas fa-user-friends"></i> 4 Guests</span>
-                        <span><i class="gdlr-icon-resize"></i>  35 - 40 sqm.</span>
-                    </div>
-                </div>
-                <div class="room-content">
-                    <div class="room-image" style="background-image: url('upload/newes.jpg')"></div>
-                    <div class="room-details">
-                        <div class="amenities">
-                            <ul>
-                              <li>House Keeping</li>
-                              <li>24 Hr Concierge</li>
-                              <li>Balcony (Garden & City View)</li>
-                              <li>Spacious Family Accommodation</li>
-                              <li>Private Bathroom</li>
-                              <li> WiFi</li>
-                              <li>TV</li>
                             </ul>
+                            <button class="see-more-btn" onclick="openAmenitiesModal('executiveQueenModal')">See More Amenities</button>
                         </div>
                         <p class="disclaimer">
-                          <ul><li>
-                            Additional Bed (Additional bed for 1 person can be arranged for a fee)
-                          </li>
-                        
-                        </ul>
+                            <ul>
+                                <li>Additional Bed (Additional bed for 1 person can be arranged for a fee)</li>
+                            </ul>
                         </p>
-                        <a href="studio.html">
-                          <button class="book-now-btn">BOOK NOW</button>
+                        <a href="queen.html">
+                            <button class="book-now-btn">BOOK NOW</button>
                         </a>
                     </div>
                 </div>
             </div>
+        
+            <!-- Executive Queen Room Modal -->
+            <div id="executiveQueenModal" class="modal">
+                <div class="modal-content">
+                    <span class="close" onclick="closeAmenitiesModal('executiveQueenModal')">&times;</span>
+                    <h2>Executive Queen Room Amenities</h2>
+                    <div class="amenities-columns">
+                        <ul>
+                            <li>Air conditioning</li>
+                            <li>Alarm clock</li>
+                            <li>Balcony</li>
+                            <li>Bathroom with shower</li>
+                            <li>Coffee/tea making facilities</li>
+                            <li>Cooking utensils</li>
+                            <li>Daily Mineral Water</li>
+                            <li>Hair dryer</li>
+                            <li>Hot Shower</li>
+                        </ul>
+                        <ul>
+                            <li>In-house movies</li>
+                            <li>In-room safe</li>
+                            <li>Internet WiFi access in room</li>
+                            <li>Iron/ironing board</li>
+                            <li>Kitchen/kitchenette</li>
+                            <li>Linen provided</li>
+                            <li>Living room/sitting area</li>
+                            <li>Microwave</li>
+                            <li>Non-smoking rooms available</li>
+                        </ul>
+                        <ul>
+                            <li>Paid movies</li>
+                            <li>Refrigerator</li>
+                            <li>Shower</li>
+                            <li>TV – cable/satellite</li>
+                            <li>TV – local only</li>
+                            <li>Telephone</li>
+                            <li>Toiletries</li>
+                            <li>Towels provided</li>
+                            <li>Wardrobe</li>
+                            <li>Washer/dryer</li>
+                            <li>Work/writing desk</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+              <!-- Executive Studio -->
+<div class="room-card">
+  <div class="room-header">
+      <h2>Executive Studio</h2>
+      <div class="bed-configuration">2 Queen Size Beds</div>
+      <div class="room-meta">
+          <span><i class="fas fa-user-friends"></i> 4 Guests</span>
+          <span><i class="gdlr-icon-resize"></i> 35 - 40 sqm.</span>
+      </div>
+  </div>
+  <div class="room-content">
+      <div class="room-image" style="background-image: url('upload/newes.jpg')"></div>
+      <div class="room-details">
+          <div class="amenities">
+              <ul>
+                  <li>House Keeping</li>
+                  <li>24 Hr Concierge</li>
+                  <li>Balcony (Garden & City View)</li>
+                  <li>Spacious Family Accommodation</li>
+                  <li>Private Bathroom</li>
+                  <li>WiFi</li>
+                  <li>TV</li>
+              </ul>
+              <button class="see-more-btn" onclick="openAmenitiesModal('executiveStudioModal')">See More Amenities</button>
+          </div>
+          <p class="disclaimer">
+              <ul>
+                  <li>Additional Bed (Additional bed for 1 person can be arranged for a fee)</li>
+              </ul>
+          </p>
+          <a href="studio.html">
+              <button class="book-now-btn">BOOK NOW</button>
+          </a>
+      </div>
+  </div>
+</div>
 
-                <!-- Family Loft Garden View -->
-                <div class="room-card">
-                    <div class="room-header">
-                        <h2>Family Loft Garden View</h2>
-                        <div class="bed-configuration">1 Queen Size Bed & 1 Single Sole Bed</div>
-                        <div class="room-meta">
-                            <span><i class="fas fa-user-friends"></i> 4 Guests</span>
-                            <span><i class="gdlr-icon-resize"></i>  65.63 sqm.</span>
-                        </div>
-                    </div>
-                    <div class="room-content">
-                        <div class="room-image" style="background-image: url('upload/gar.jpg')"></div>
-                        <div class="room-details">
-                            <div class="amenities">
-                                <ul>
-                                    <li>House Keeping</li>
-                                    <li>24 Hr Concierge</li>
-                                    <li>Garden View</li>
-                                    <li>Spacious Family Accommodation</li>
-                                    <li>Private Bathroom</li>
-                                    <li> WiFi</li>
-                                    <li>TV</li>
-                                </ul>
-                            </div>
-                            <p class="disclaimer">
-                              <ul><li>
-                                Additional Bed (Additional bed for 1 person can be arranged for a fee)
-                              </li>
-                            </ul>
-                            </p>
-                            <a href="garden.html">
-                            <button class="book-now-btn">BOOK NOW</button>
-                          </a>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Family Loft City View -->
-                <div class="room-card">
-                    <div class="room-header">
-                        <h2>Family Loft City View</h2>
-                        <div class="bed-configuration">2 Queen Size Beds</div>
-                        <div class="room-meta">
-                            <span><i class="fas fa-user-friends"></i> 5 Guests</span>
-                            <span><i class="gdlr-icon-resize"></i>  71.28 sqm.</span>
-                        </div>
-                    </div>
-                    <div class="room-content">
-                        <div class="room-image" style="background-image: url('upload/cit.png')"></div>
-                        <div class="room-details">
-                            <div class="amenities">
-                                <ul>
-                                    <li>2 Queen Size Beds</li>
-                                    <li>House Keeping</li>
-                                    <li>24 Hr Concierge</li>
-                                    <li>City View</li>
-                                    <li>Spacious Family Accommodation</li>
-                                    <li>Private Bathroom</li>
-                                    <li> WiFi</li>
-                                    <li>TV</li>
-                                </ul>
-                            </div>
-                            <p class="disclaimer">
-                              <ul><li>
-                                Additional Bed (Additional bed for 1 person can be arranged for a fee)
-                              </li>
-                           
-                            </ul>
-                            </p>
-                            <a href="city.html">
-                              <button class="book-now-btn">BOOK NOW</button>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                
+<!-- Family Loft Garden View -->
+<div class="room-card">
+  <div class="room-header">
+      <h2>Family Loft Garden View</h2>
+      <div class="bed-configuration">1 Queen Size Bed & 1 Single Sole Bed</div>
+      <div class="room-meta">
+          <span><i class="fas fa-user-friends"></i> 4 Guests</span>
+          <span><i class="gdlr-icon-resize"></i> 65.63 sqm.</span>
+      </div>
+  </div>
+  <div class="room-content">
+      <div class="room-image" style="background-image: url('upload/gar.jpg')"></div>
+      <div class="room-details">
+          <div class="amenities">
+              <ul>
+                  <li>House Keeping</li>
+                  <li>24 Hr Concierge</li>
+                  <li>Garden View</li>
+                  <li>Spacious Family Accommodation</li>
+                  <li>Private Bathroom</li>
+                  <li>WiFi</li>
+                  <li>TV</li>
+              </ul>
+              <button class="see-more-btn" onclick="openAmenitiesModal('familyLoftGardenModal')">See More Amenities</button>
+          </div>
+          <p class="disclaimer">
+              <ul>
+                  <li>Additional Bed (Additional bed for 1 person can be arranged for a fee)</li>
+              </ul>
+          </p>
+          <a href="garden.html">
+              <button class="book-now-btn">BOOK NOW</button>
+          </a>
+      </div>
+  </div>
+</div>
+
+<!-- Family Loft City View -->
+<div class="room-card">
+  <div class="room-header">
+      <h2>Family Loft City View</h2>
+      <div class="bed-configuration">2 Queen Size Beds</div>
+      <div class="room-meta">
+          <span><i class="fas fa-user-friends"></i> 5 Guests</span>
+          <span><i class="gdlr-icon-resize"></i> 71.28 sqm.</span>
+      </div>
+  </div>
+  <div class="room-content">
+      <div class="room-image" style="background-image: url('upload/cit.png')"></div>
+      <div class="room-details">
+          <div class="amenities">
+              <ul>
+                  <li>2 Queen Size Beds</li>
+                  <li>House Keeping</li>
+                  <li>24 Hr Concierge</li>
+                  <li>City View</li>
+                  <li>Spacious Family Accommodation</li>
+                  <li>Private Bathroom</li>
+                  <li>WiFi</li>
+                  <li>TV</li>
+              </ul>
+              <button class="see-more-btn" onclick="openAmenitiesModal('familyLoftCityModal')">See More Amenities</button>
+          </div>
+          <p class="disclaimer">
+              <ul>
+                  <li>Additional Bed (Additional bed for 1 person can be arranged for a fee)</li>
+              </ul>
+          </p>
+          <a href="city.html">
+              <button class="book-now-btn">BOOK NOW</button>
+          </a>
+      </div>
+  </div>
+</div>
+
+<!-- Modals for each room type -->
+<!-- Executive Studio Modal -->
+<div id="executiveStudioModal" class="modal">
+  <div class="modal-content">
+      <span class="close" onclick="closeAmenitiesModal('executiveStudioModal')">&times;</span>
+      <h2>Executive Studio Amenities</h2>
+      <div class="amenities-columns">
+          <ul>
+              <li>Air conditioning</li>
+              <li>Alarm clock</li>
+              <li>Balcony</li>
+              <li>Bathroom with shower</li>
+              <li>Coffee/tea making facilities</li>
+              <li>Daily Mineral Water</li>
+              <li>Dining area & settings</li>
+              <li>External window</li>
+              <li>Hair dryer</li>
+          </ul>
+          <ul>
+              <li>Hot Shower</li>
+              <li>In-room safe</li>
+              <li>Internet WiFi access in room</li>
+              <li>Iron/ironing board</li>
+              <li>Kitchen/kitchenette</li>
+              <li>Linen provided</li>
+              <li>Living room/sitting area</li>
+              <li>Microwave</li>
+              <li>Mini Refrigerator</li>
+          </ul>
+          <ul>
+              <li>Non-smoking rooms available</li>
+              <li>Shower</li>
+              <li>Sofa/lounge chairs</li>
+              <li>TV – cable/satellite</li>
+              <li>Table lamp</li>
+              <li>Terrace/patio</li>
+              <li>Toiletries</li>
+              <li>Towels provided</li>
+              <li>Wardrobe</li>
+              <li>Work/writing desk</li>
+          </ul>
+      </div>
+  </div>
+</div>
+
+<!-- Family Loft Garden View Modal -->
+<div id="familyLoftGardenModal" class="modal">
+  <div class="modal-content">
+      <span class="close" onclick="closeAmenitiesModal('familyLoftGardenModal')">&times;</span>
+      <h2>Family Loft Garden View Amenities</h2>
+      <div class="amenities-columns">
+          <ul>
+              <li>Air conditioning</li>
+              <li>Alarm clock</li>
+              <li>Bathroom with shower</li>
+              <li>Coffee/tea making facilities</li>
+              <li>Cooking utensils</li>
+              <li>Daily Mineral Water</li>
+              <li>Dining area & settings</li>
+              <li>External window</li>
+              <li>Hair dryer</li>
+          </ul>
+          <ul>
+              <li>Hot Shower</li>
+              <li>In-house movies</li>
+              <li>In-room safe</li>
+              <li>Internet WiFi access in room</li>
+              <li>Iron/ironing board</li>
+              <li>Kitchen/kitchenette</li>
+              <li>Linen provided</li>
+              <li>Living room/sitting area</li>
+              <li>Microwave</li>
+          </ul>
+          <ul>
+              <li>Mini Refrigerator</li>
+              <li>Non-smoking rooms available</li>
+              <li>Refrigerator</li>
+              <li>Shower</li>
+              <li>Sofa/lounge chairs</li>
+              <li>TV – cable/satellite</li>
+              <li>TV – local only</li>
+              <li>Table lamp</li>
+              <li>Telephone</li>
+              <li>Toiletries</li>
+              <li>Towels provided</li>
+              <li>Wardrobe</li>
+              <li>Washer/dryer</li>
+              <li>Work/writing desk</li>
+          </ul>
+      </div>
+  </div>
+</div>
+
+<!-- Family Loft City View Modal -->
+<div id="familyLoftCityModal" class="modal">
+  <div class="modal-content">
+      <span class="close" onclick="closeAmenitiesModal('familyLoftCityModal')">&times;</span>
+      <h2>Family Loft City View Amenities</h2>
+      <div class="amenities-columns">
+          <ul>
+              <li>Air conditioning</li>
+              <li>Alarm clock</li>
+              <li>Balcony</li>
+              <li>Bathroom with shower</li>
+              <li>Coffee/tea making facilities</li>
+              <li>Cooking utensils</li>
+              <li>Daily Mineral Water</li>
+              <li>Dining area & settings</li>
+              <li>Hair dryer</li>
+          </ul>
+          <ul>
+              <li>Hot Shower</li>
+              <li>In-house movies</li>
+              <li>In-room safe</li>
+              <li>Internet WiFi access in room</li>
+              <li>Iron/ironing board</li>
+              <li>Kitchen/kitchenette</li>
+              <li>Linen provided</li>
+              <li>Living room/sitting area</li>
+              <li>Microwave</li>
+              <li>Mini Refrigerator</li>
+          </ul>
+          <ul>
+              <li>Non-smoking rooms available</li>
+              <li>Refrigerator</li>
+              <li>Shower</li>
+              <li>Sofa/lounge chairs</li>
+              <li>TV – cable/satellite</li>
+              <li>TV – local only</li>
+              <li>Table lamp</li>
+              <li>Telephone</li>
+              <li>Toiletries</li>
+              <li>Towels provided</li>
+              <li>Wardrobe</li>
+              <li>Washer/dryer</li>
+              <li>Work/writing desk</li>
+          </ul>
+      </div>
+  </div>
+</div>
+
+<script>
+  function openAmenitiesModal(modalId) {
+      document.getElementById(modalId).style.display = 'block';
+  }
+  
+  function closeAmenitiesModal(modalId) {
+      document.getElementById(modalId).style.display = 'none';
+  }
+  
+  // Close modal when clicking outside of it
+  window.onclick = function(event) {
+      if (event.target.className === 'modal') {
+          event.target.style.display = "none";
+      }
+  }
+</script>
             </div>
         </body>
             </div>
