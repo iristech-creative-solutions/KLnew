@@ -265,6 +265,9 @@
                     box-shadow: 0 4px 12px rgba(0,0,0,0.1);
                     margin-bottom: 30px;
                     overflow: hidden;
+                    display: flex;
+    flex-direction: column;
+
                 }
                 
                 .room-header {
@@ -300,7 +303,8 @@
                 
                 .room-content {
                     display: flex;
-                    flex-direction: column;
+    flex-direction: column;
+    flex-grow: 1; /* Make content fill available space */
                 }
                 
                 .room-image {
@@ -313,6 +317,7 @@
                 .room-details {
                     width: 100%;
                     padding: 20px;
+                    flex-grow: 1; /* Make details section fill available space */
                 }
                 
                 .amenities {
@@ -375,10 +380,13 @@
                     border: none;
                     cursor: pointer;
                     font-size: 15px;
-                    width: 100%;
                     text-align: center;
+                    width: auto; /* Override the 100% width on mobile */
+                    max-width: 200px; /* Optional: set a max width */
                 }
-                
+                .amenities-container {
+    flex-grow: 1; /* Push button to bottom */
+}
                 .book-now-btn:hover {
                     background: #b08a5b;
                 }
