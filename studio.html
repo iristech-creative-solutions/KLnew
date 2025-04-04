@@ -455,8 +455,8 @@
                                                                         <p>Queen Size Bed: <strong>2</strong></p>
                                                                     </div>
                                                                     <div class="column right">
-                                                                        <p>Check In: <strong>02:00 PM</strong></p>
-                                                                        <p>Check Out: <strong>11:00 AM</strong></p>
+                                                                        <p>Check In: <strong>14:00</strong></p>
+                                                                        <p>Check Out: <strong>12:00</strong></p>
                                                                         <p>Property Type: <strong>2 Bed Rooms Executive Studio</strong></p>
                                                                     </div>
                                                                 </div>
@@ -1516,64 +1516,66 @@
         };
         /* ]]> */
     </script>
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            // Initialize dates
-            const today = new Date();
-            const tomorrow = new Date();
-            tomorrow.setDate(today.getDate() + 1);
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                // Initialize dates
+                const today = new Date();
+                const tomorrow = new Date();
+                tomorrow.setDate(today.getDate() + 1);
+                
+                document.querySelector('input[name="start_date"]').value = today.toISOString().split('T')[0];
+                document.querySelector('input[name="end_date"]').value = tomorrow.toISOString().split('T')[0];
             
-            document.querySelector('input[name="start_date"]').value = today.toISOString().split('T')[0];
-            document.querySelector('input[name="end_date"]').value = tomorrow.toISOString().split('T')[0];
-        
-            // Form elements
-            const form = document.getElementById('tourmaster-room-booking-form');
-            const adultInput = document.querySelector('.adult-input');
-            const childInput = document.querySelector('.child-input');
-            const validationMessage = document.querySelector('.guest-validation-message');
-            const startDateInput = document.getElementById('start_date');
-            const endDateInput = document.getElementById('end_date');
-        
-            // Guest validation
-            function validateGuests() {
-                const adults = parseInt(adultInput.value);
-                const children = parseInt(childInput.value);
-                const isValid = (adults + children) <= 3;
-                
-                validationMessage.style.display = isValid ? 'none' : 'block';
-                return isValid;
-            }
-        
-            // Date validation
-            function validateDates() {
-                const startDate = new Date(startDateInput.value);
-                const endDate = new Date(endDateInput.value);
-                
-                if (!startDateInput.value || !endDateInput.value) {
-                    alert("Please select both check-in and check-out dates");
-                    return false;
+                // Form elements
+                const form = document.getElementById('tourmaster-room-booking-form');
+                const adultInput = document.querySelector('.adult-input');
+                const childInput = document.querySelector('.child-input');
+                const validationMessage = document.querySelector('.guest-validation-message');
+                const startDateInput = document.getElementById('start_date');
+                const endDateInput = document.getElementById('end_date');
+            
+                // Guest validation
+                function validateGuests() {
+                    const adults = parseInt(adultInput.value);
+                    const children = parseInt(childInput.value);
+                    
+                    // Allow 3 adults + 1 child (total 4), but block 4 adults
+                    const isValid = (adults <= 4 && children <= 1) || (adults <= 4 && children === 0);
+                    const showMessage = (adults >= 5) || (adults + children > 6) || (adults === 4 && children > 2);
+                    
+                    validationMessage.style.display = showMessage ? 'block' : 'none';
+                    return !showMessage;
                 }
-                
-                if (endDate <= startDate) {
-                    alert("Check-out date must be after check-in date");
-                    return false;
+            
+                // Date validation
+                function validateDates() {
+                    const startDate = new Date(startDateInput.value);
+                    const endDate = new Date(endDateInput.value);
+                    
+                    if (!startDateInput.value || !endDateInput.value) {
+                        alert("Please select both check-in and check-out dates");
+                        return false;
+                    }
+                    
+                    if (endDate <= startDate) {
+                        alert("Check-out date must be after check-in date");
+                        return false;
+                    }
+                    
+                    return true;
                 }
-                
-                return true;
-            }
-        
-            // Form submission handler
-            form.addEventListener('submit', function(e) {
-                if (!validateDates() || !validateGuests()) {
-                    e.preventDefault();
-                }
+            
+                // Form submission handler
+                form.addEventListener('submit', function(e) {
+                    if (!validateDates() || !validateGuests()) {
+                        e.preventDefault();
+                    }
+                });
+            
+                // Plus/Minus button handlers would go here
+                // ...
             });
-        
-            // Plus/Minus button handlers would go here
-            // ...
-        });
-        </script>
-
+            </script>
 
     <script type="text/javascript" src="js/ui/core.min.js" id="jquery-ui-core-js"></script>
     <script type="text/javascript" src="js/ui/datepicker.min.js" id="jquery-ui-datepicker-js"></script>

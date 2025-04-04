@@ -453,8 +453,8 @@
                                                                         <p>Queen Size Bed: <strong>1</strong></p>
                                                                     </div>
                                                                     <div class="column right">
-                                                                        <p>Check In: <strong>02:00 PM</strong></p>
-                                                                        <p>Check Out: <strong>11:00 AM</strong></p>
+                                                                        <p>Check In: <strong>14:00</strong></p>
+                                                                        <p>Check Out: <strong>12:00</strong></p>
                                                                         <p>Property Type: <strong>One Bedroom Executive Queen Bed</strong></p>
                                                                     </div>
                                                                 </div>
@@ -1021,7 +1021,7 @@
                                                                     </div>
                                                                 </div>
                                                                 <div class="guest-validation-message" style="color: red; display: none;">
-                                                                    Maximum 3 guests allowed. For 4+ guests, please book a Studio or Family Loft.
+                                                                    Maximum 3 guests allowed. For 4+ guests, please book our other Rooms.
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -1522,10 +1522,13 @@
                 function validateGuests() {
                     const adults = parseInt(adultInput.value);
                     const children = parseInt(childInput.value);
-                    const isValid = (adults + children) <= 3;
                     
-                    validationMessage.style.display = isValid ? 'none' : 'block';
-                    return isValid;
+                    // Allow 3 adults + 1 child (total 4), but block 4 adults
+                    const isValid = (adults <= 3 && children <= 1) || (adults <= 3 && children === 0);
+                    const showMessage = (adults >= 4) || (adults + children > 4) || (adults === 3 && children > 1);
+                    
+                    validationMessage.style.display = showMessage ? 'block' : 'none';
+                    return !showMessage;
                 }
             
                 // Date validation
@@ -1557,7 +1560,6 @@
                 // ...
             });
             </script>
-    
           <script
             type="text/javascript"
             src="js/jquery-migrate.min.js?ver=3.3.2"
