@@ -550,28 +550,40 @@
                           </div>
                         </div>
                         <div class="gdlr-core-pbf-element">
-                          <div
-                            class="gdlr-core-text-box-item gdlr-core-item-pdlr gdlr-core-item-pdb gdlr-core-left-align"
-                          >
-                            <div
-                              class="gdlr-core-text-box-item-content"
-                              style="
-                                font-size: 20px;
-                                line-height: 1.4;
-                                font-weight: 400;
-                                letter-spacing: 4px;
-                                text-transform: none;
-                                color: #0a0a0a;
-                                text-align: justify;
-                              "
-                            >
-                              <p>
-                                KL Executive (KLX) brings you a refreshing and inspiring experience in Makati. Located on Gamboa Street, fronting the Legazpi Active Park and Washington Sycip Park, our serviced residences offer a blend of the serenity of nature, proximity to shopping, and the convenience of being in the heart of business.
-                              </p>
-                              <p>We are delighted to have you at KL Executive Greenbelt Serviced Residences.</p>
-                            </div>
+                          <div class="gdlr-core-text-box-item gdlr-core-item-pdlr gdlr-core-item-pdb gdlr-core-left-align">
+                              <div class="gdlr-core-text-box-item-content" style="
+                                  font-size: 20px;
+                                  line-height: 1.4;
+                                  font-weight: 400;
+                                  letter-spacing: 4px;
+                                  text-transform: none;
+                                  color: #0a0a0a;
+                                  text-align: justify;
+                              ">
+                                  <p style="text-align: inherit;">
+                                      KL Executive (KLX) brings you a refreshing and inspiring experience in Makati. Located on Gamboa Street, fronting the Legazpi Active Park and Washington Sycip Park, our serviced residences offer a blend of the serenity of nature, proximity to shopping, and the convenience of being in the heart of business.
+                                  </p>
+                                  <p style="text-align: inherit;">We are delighted to have you at KL Executive Greenbelt Serviced Residences.</p>
+                              </div>
                           </div>
-                        </div>
+                      </div>
+                      
+                      <style>
+                          /* Mobile view - left align */
+                          @media (max-width: 767px) {
+                              .gdlr-core-text-box-item-content,
+                              .gdlr-core-text-box-item-content p {
+                                  text-align: left !important;
+                              }
+                          }
+                          
+                          /* Desktop view - justify (already set in inline style) */
+                          @media (min-width: 768px) {
+                              .gdlr-core-text-box-item-content {
+                                  text-align: justify;
+                              }
+                          }
+                      </style>
                       </div>
                     </div>
                   </div>
