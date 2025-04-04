@@ -1,161 +1,175 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: Arial, sans-serif;
-}
-
-body {
-    background-color: #111;
-    color: #ccc;
-}
-
+/* Gallery Section Styling */
 .gallery-section {
-    text-align: center;
-    padding: 20px;
-}
-
-.gallery-section h2 {
-    color: #fff;
-    margin-bottom: 15px;
-    font-size: 2rem;
-}
-
-.gallery-section p {
-    color: #ccc;
-    margin-bottom: 30px;
-    font-size: 1.1rem;
+    padding: 60px 20px;
+    background-color: #f8f8f8;
+    color: #333;
+    max-width: 1400px; /* Increased from 1200px */
+    margin: 0 auto;
+    width: 95%; /* Ensures some padding on smaller screens */
 }
 
 .gallery-container {
     display: flex;
+    gap: 30px;
     justify-content: center;
-    gap: 20px;
-    flex-wrap: wrap;
-    max-width: 1200px;
+    padding: 20px;
+    max-width: 1300px; /* Match gallery-section width */
     margin: 0 auto;
 }
 
-.gallery-item {
-    position: relative;
-    width: 45%;
-    overflow: hidden;
-    border-radius: 10px;
-    margin-bottom: 20px;
-    min-height: 300px; /* Set minimum height for consistency */
-}
-
-.gallery-item img {
+.gallery-card {
     width: 100%;
-    height: 100%;
-    object-fit: cover;
-    border-radius: 10px;
+    max-width: 500px; /* Increased from 400px */
+    background: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
     transition: transform 0.3s ease;
 }
 
-.gallery-item:hover img {
-    transform: scale(1.05);
-}
-
-.gallery-content {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background: rgba(0, 0, 0, 0.7);
-    color: white;
-    padding: 20px;
+.gallery-header {
     text-align: center;
-    width: 90%;
-    max-width: 350px;
-    border-radius: 10px;
-    backdrop-filter: blur(5px);
+    margin-bottom: 50px;
 }
 
-.gallery-content h3 {
-    font-size: 1.5em;
-    margin-bottom: 10px;
-    color: #fff;
-}
-
-.gallery-content p {
-    font-size: 1em;
+.gallery-header h2 {
+    font-size: 2.2rem;
+    color: #222;
     margin-bottom: 15px;
-    line-height: 1.4;
+    font-weight: 500;
 }
 
-.more-info {
+.gallery-header .subtitle {
+    font-size: 1.1rem;
+    color: #666;
+    line-height: 1.6;
+}
+
+/* Gallery Container */
+
+
+.gallery-column {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    max-width: 50%;
+}
+
+/* Gallery Card - Consolidated Styles */
+
+
+.gallery-card:hover {
+    transform: translateY(-5px);
+}
+
+.card-image {
+    position: relative;
+    height: 300px;
+    overflow: hidden;
+}
+
+.card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.gallery-card:hover .card-image img {
+    transform: scale(1.03);
+}
+
+.image-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.2);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.gallery-card:hover .image-overlay {
+    opacity: 1;
+}
+
+.card-content {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    min-height: 100px; /* Changed from fixed height to min-height */
+}
+
+.card-content h3 {
+    margin: 0 0 10px 0;
+    font-size: 1.3rem;
+    color: #222;
+}
+
+.card-content p {
+    margin: 0 0 15px 0;
+    color: #666;
+    line-height: 1.6;
+    font-size: 0.95rem;
+    flex-grow: 1;
+}
+
+.button-container {
+    margin-top: auto;
+    text-align: center;
+}
+
+.view-button, 
+.view-gallery { /* Consolidated button styles */
     display: inline-block;
     padding: 10px 20px;
-    color: #111;
-    background: #fff;
+    color: white;
     text-decoration: none;
-    border-radius: 5px;
-    transition: all 0.3s;
-    font-weight: bold;
-    border: 2px solid transparent;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    transition: background 0.3s ease;
 }
 
-.more-info:hover {
-    background: transparent;
-    color: #fff;
-    border-color: #fff;
+
+
+.hidden {
+    display: none;
 }
 
-/* Responsive adjustments */
+/* Responsive Adjustments */
 @media (max-width: 768px) {
-    .gallery-section h2 {
+    .gallery-container {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .gallery-column {
+        max-width: 100%;
+        width: 100%;
+    }
+    
+    .gallery-header h2 {
         font-size: 1.8rem;
     }
     
-    .gallery-section p {
-        font-size: 1rem;
-    }
-    
-    .gallery-container {
-        flex-direction: column;
-        gap: 15px;
-    }
-    
-    .gallery-item {
-        width: 100%;
-        min-height: 250px;
-    }
-    
-    .gallery-content {
-        padding: 15px;
-        width: 95%;
-    }
-    
-    .gallery-content h3 {
-        font-size: 1.3em;
-    }
-    
-    .gallery-content p {
-        font-size: 0.9em;
-        margin-bottom: 12px;
-    }
-    
-    .more-info {
-        padding: 8px 15px;
-        font-size: 0.9em;
+    .card-image {
+        height: 220px;
     }
 }
 
 @media (max-width: 480px) {
     .gallery-section {
-        padding: 15px 10px;
+        padding: 40px 15px;
     }
     
-    .gallery-section h2 {
-        font-size: 1.5rem;
+    .card-image {
+        height: 200px;
     }
     
-    .gallery-item {
-        min-height: 200px;
-    }
-    
-    .gallery-content {
-        padding: 10px;
+    .card-content {
+        padding: 15px;
+        min-height: auto;
     }
 }
