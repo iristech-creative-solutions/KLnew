@@ -22,9 +22,68 @@
     align-items: center;
     justify-content: center;
 }
-
 .room {
     background-image: url('../upload/7.jpg'); 
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 450px; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    color: white;
+    text-align: center;
+   border-radius: 20px;
+}
+
+.about {
+    background-image: url('../upload/lobby1.jpg'); 
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 450px; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    color: white;
+    text-align: center;
+   border-radius: 20px;
+}
+
+.review {
+    background-image: url('../upload/joven.jpg'); 
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 450px; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    color: white;
+    text-align: center;
+   border-radius: 20px;
+}
+
+.faq {
+    background-image: url('../upload/EQRBED.jpg'); 
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 450px; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    color: white;
+    text-align: center;
+   border-radius: 20px;
+}
+
+.blog {
+    background-image: url('../upload/upload/frontview0.jpg'); 
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -99,7 +158,7 @@
 }
 
 .gallery{
-    background-image: url('../upload/newes.jpg'); 
+    background-image: url('../upload/gardenview2.jpg'); 
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
